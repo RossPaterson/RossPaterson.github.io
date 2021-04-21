@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="javascript/regex_language.js"></script>
+<style>
+body {
+	font-family: sans-serif;
+	margin-left: 20px;
+}
+table.tool {
+	margin-right: 4em; margin-bottom: 4ex;
+	background-color: #ffe4b5;
+	border: #a0522d solid 2px;
+	border-radius: 8px;
+	padding: 12pt;
+}
+th {
+	text-align: left;
+}
+.error {
+	color: red;
+}
+</style>
+<title>Regular Expressions and Languages</title>
+</head>
+
+<body>
+<h1>Regular Expressions and Languages</h1>
+
+<p>
+This is a tool for exploring the languages denoted by regular expressions.
+
+<noscript>
+<p><em>To make it work, you'll need a browser that supports JavaScript.</em>
+</noscript>
+
+<p>Type a regular expression in one of the boxes (they all do the same thing)
+and hit return to see (part of) the language it describes.
+<table class="tool">
+<tr><th>Regular expression</th><th>Language</th></tr>
+<tr>
+<td><input id="regex-1" type="text" size="20" /></td><td id="language-1"></td>
+</tr>
+<tr>
+<td><input id="regex-2" type="text" size="20" /></td><td id="language-2"></td>
+</tr>
+<tr>
+<td><input id="regex-3" type="text" size="20" /></td><td id="language-3"></td>
+</tr>
+</table>
+<script>
+regexAndLanguage("regex-1", "language-1");
+regexAndLanguage("regex-2", "language-2");
+regexAndLanguage("regex-3", "language-3");
+</script>
+
+<p>Some things to try:
+<ul>
+<li><code>a(a|b)*</code>
+<li><code>(a|b)*a(a|b)*</code> <!-- strings containing at least one a -->
+<li><code>((a|b)(a|b))*</code> <!-- strings of even length -->
+<li><code>(a|b)((a|b)(a|b))*</code> <!-- strings of odd length -->
+<li><code>b*ab*</code> <!-- strings containing exactly one a -->
+<li><code>b*ab*ab*</code> <!-- strings containing exactly two a's -->
+</ul>
+
+</body>
+</html>
